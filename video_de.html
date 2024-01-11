@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hochzeit von Iris und Victor</title>
+    <style>
+      html, body {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #F2F4F1; /* Cor de fundo como fallback */
+          background-image: url('assets/background.gif'); /* Caminho para o seu GIF */
+          background-repeat: no-repeat;
+          background-size: cover; /* Cobrirá toda a área disponível */
+          background-position: center;
+      }
+      .video-container {
+          position: relative; /* Posicionamento relativo para posicionar o pop-up */
+          width: 90%;
+          max-width: 750px;
+          margin: auto;
+      }
+      video {
+          width: 100%;
+          height: auto;
+          display: block; /* Garantir que não haja margens extras */
+      }
+      /* Estilos para o pop-up */
+      .popup {
+          display: none; /* Escondido por padrão */
+          position: absolute;
+          top: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+          background: #ffffff;
+          padding: 10px;
+          border: 1px solid #000;
+          z-index: 100;
+      }
+      nav {
+          width: 100%;
+          background: rgba(255, 255, 255, 0.9); /* Fundo branco com leve transparência */
+          position: fixed; /* Ficará fixo no topo da página */
+          top: 0;
+          left: 0;
+          z-index: 1000; /* Garante que o menu fique acima de outros elementos */
+          padding: 10px 0; /* Alguns espaços verticais */
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para destacar o menu */
+      }
+
+      nav ul {
+          list-style: none; /* Remove os marcadores de lista */
+          padding: 0;
+          margin: 0;
+          display: flex; /* Alinha os itens de menu horizontalmente */
+          justify-content: center; /* Centraliza os itens de menu */
+      }
+
+      nav ul li {
+          margin: 0 20px; /* Espaçamento entre os itens de menu */
+      }
+
+      nav ul li a {
+          text-decoration: none; /* Remove o sublinhado dos links */
+          color: #333; /* Cor do texto para os links */
+          font-weight: bold; /* Torna o texto mais espesso */
+          transition: color 0.3s ease; /* Suaviza a mudança de cor ao passar o mouse */
+          white-space: nowrap; /* Evita a quebra de texto */
+      }
+
+      nav ul li a:hover,
+      nav ul li a:focus {
+          color: #007bff; /* Cor quando o mouse passa sobre o item ou está focado */
+      }
+
+      /* Estilos para tela pequena */
+      @media (max-width: 768px) {
+          nav ul li {
+              margin: 0 10px; /* Menor espaçamento entre itens de menu */
+          }
+      }
+
+      @media (max-width: 768px) {
+  nav ul li a {
+      font-size: 0.9em; /* Reduz o tamanho da fonte */
+  }
+
+  @media (max-width: 480px) {
+  nav ul li a {
+      font-size: 0.8em; /* Reduz ainda mais o tamanho da fonte */
+  }
+}
+}
+  </style>
+</head>
+<body>
+
+<div class="video-container">
+    <video id="meuVideo" autoplay muted>
+      <source src="assets/DE.mp4" type="video/mp4">
+      Ihr Browser unterstützt keine eingebetteten Videos.
+    </video>
+    <div class="popup" id="popupInfo">Klicken Sie auf das Video, um es abzuspielen/anzuhalten und die Musik anzuhören</div>
+</div>
+
+<audio id="minhaMusica" autoplay loop>
+  <source src="assets/Just Stay - Aakash Gandhi.mp3" type="audio/mpeg">
+  Ihr Browser unterstützt keine eingebetteten Videos.
+</audio>
+
+<script>
+  const video = document.getElementById('meuVideo');
+  const musica = document.getElementById('minhaMusica');
+  const popup = document.getElementById('popupInfo');
+
+  function togglePlayPause() {
+    if (video.paused) {
+      video.play();
+      musica.play();
+    } else {
+      video.pause();
+      musica.pause();
+    }
+  }
+
+  // Função para mostrar o pop-up
+  function showPopup() {
+    popup.style.display = 'block';
+    setTimeout(() => {
+      popup.style.display = 'none';
+    }, 4000); // O pop-up desaparecerá após 4 segundos
+  }
+
+  // Adicionar evento de clique para tocar/pausar ambos e mostrar pop-up
+  video.addEventListener('click', () => {
+    togglePlayPause();
+    showPopup();
+  });
+
+  musica.addEventListener('click', togglePlayPause);
+
+  // Garantir que a música comece com o vídeo
+  video.addEventListener('play', () => {
+    if (musica.paused) {
+      musica.play();
+    }
+  });
+
+  video.addEventListener('pause', () => {
+    musica.pause();
+  });
+
+  // Exibir o pop-up quando a página é carregada
+  window.addEventListener('load', showPopup);
+  video.addEventListener('ended', () => {
+    window.location.href = 'nozze/index-de.html'; // Substitua com o URL desejado
+  });
+</script>
+
+</body>
+</html>

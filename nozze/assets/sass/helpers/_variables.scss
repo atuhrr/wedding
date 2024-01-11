@@ -1,0 +1,32 @@
+/*---------------------------
+	Fonts
+----------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Old+Standard+TT:wght@400;700&family=Petit+Formal+Script&display=swap');
+
+
+// fonts
+$base-font-size: 18;
+$base-font: 'DM Sans', sans-serif;
+$heading-font: 'Old Standard TT', serif;
+$heading-font2: 'Petit Formal Script', cursive;
+
+
+// color
+$dark-gray: #212121;
+$body-color: #757575;
+$white: #fff;
+$light: #8188a9;
+$black: #000;
+$small-black: #333;
+$cyan: #848892;
+
+$theme-primary-color: #C8A898;
+$theme-primary-color-s2: #5D7C78;
+$body-bg-color: #fff;
+$section-bg-color: #F8F7F3;
+$text-color: #585858;
+$text-light-color: #7b7b7b;
+$heading-color: $dark-gray;
+$border-color: #e7dedf;
+$border-color-s2: #e4ebf2;
+

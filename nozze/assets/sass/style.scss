@@ -1,0 +1,139 @@
+/*------------------------------------------------------------------
+[Master Stylesheet]
+Theme Name:     Nozze - Wedding & Planner HTML5 Template
+Version:        1.0.0
+-------------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+
+1. General
+	1.1 Theme Reset Style
+	1.2 Global Elements
+
+2. header
+	2.1 topbar
+	2.2 navigation
+
+3. content
+	3.1 wpo-hero-slider
+	3.2 wpo-wedding-date
+	3.3 story-section
+	3.4 wpo-portfolio-section
+	3.5 wpo-contact-section
+	3.6 wpo-event-section
+	3.7 wpo-blog-section
+	3.8 wpo-partners-section
+
+4. wpo-footer
+
+5. Home-style-2
+   5.1 wpo-about-section
+   5.2 wpo-service-section
+   5.3 wpo-fun-fact-section
+   5.4 wpo-portfolio-section-s2
+   5.5 wpo-testimonials-section
+   5.6 wpo-team-section
+   5.7 wpo-pricing-section
+
+ 6. Home-style-3 
+  	6.1 wpo-couple-section
+	6.2 wpo-cta-section
+	
+7. wpo-service-single
+
+8. coming-soon-section
+
+9. wpo-cart-page-style
+
+10. wpo-checkout-page-style
+
+11. wpo-shop-page
+
+12. wpo-shop-single-page
+
+13. wpo-team-single
+
+14. wpo-portfolio-single-section
+
+15. wpo-blog-pg-section
+
+16. wpo-blog-single-section
+
+17. wpo-contact-pg-section
+
+18. error-404-section
+
+----------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------------
+1. General
+----------------------------------------------------------------*/
+
+// helpers
+@import "helpers/variables";
+@import "helpers/functions";
+@import "helpers/mixins";
+
+// base
+@import "base/base";
+
+
+// components
+@import "components/section-title";
+@import "components/buttons";
+@import "components/form";
+@import "components/social-links";
+@import "components/page-title";
+@import "components/preloader";
+@import "components/blog-sidebar";
+@import "components/shop-sidebar";
+@import "components/pagination";
+
+// layout
+@import "layout/header";
+@import "layout/hero-slider";
+@import "layout/footer";
+
+// components
+@import "components/sticky-header";
+
+
+// page
+@import "page/home-default";
+
+@import "page/_home-style2";
+
+@import "page/_home-style3";
+
+
+@import "page/_service";
+
+@import "page/_coming-soon";
+
+@import "page/_cart";
+
+@import "page/_checkout";
+
+@import "page/_shop";
+
+@import "page/_shop-single";
+
+@import "page/_team-single";
+
+@import "page/_portfolio-single";
+
+@import "page/_blog";
+
+@import "page/_blog-single";
+
+@import "page/_contact";
+
+@import "page/_error-404";
+
+
+
+
