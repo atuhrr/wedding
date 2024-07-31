@@ -1,12 +1,19 @@
-document.getElementById('languageForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+document.getElementById('languageForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Impede o envio padrão do formulário
 
-    var language = document.getElementById('language').value;
-    var email = document.getElementById('email').value;
+    // Obtém a língua selecionada
+    const language = document.getElementById('language').value;
 
-    // Você pode adicionar aqui a lógica para salvar o e-mail em algum lugar, se necessário.
+    // Define a URL de redirecionamento baseada na língua selecionada
+    let redirectUrl;
+    if (language === 'PT') {
+        redirectUrl = 'nozze/index-pt.html'; // URL para a versão em português
+    } else if (language === 'EN') {
+        redirectUrl = 'nozze/index.html'; // URL para a versão em inglês
+    } else if (language === 'DE') {
+        redirectUrl = 'nozze/index-de.html'; // URL para a versão em alemão
+    }
 
-    // Redireciona para a página do vídeo com base no idioma selecionado
-    var videoPageUrl = `video_${language.toLowerCase()}.html`; // Assume que você tem páginas video_pt.html, video_en.html e video_de.html
-    window.location.href = videoPageUrl;
+    // Redireciona para a URL correspondente
+    window.location.href = redirectUrl;
 });

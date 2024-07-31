@@ -1,16 +1,3 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url('assets/background-sheets.gif');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
 .form-instructions {
     margin-bottom: 15px;
     text-align: center; 
@@ -33,55 +20,18 @@ html, body {
     display: inline-block; 
 }
 
-.girlanda-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
+/* Novos estilos para centralizar a imagem e remover o fundo verde */
+.image-container {
+    text-align: center; /* Centraliza o conteúdo dentro do container */
+    margin-top: 20px; /* Adiciona um pouco de espaço acima da imagem */
 }
 
-.girlanda-container img {
-    max-width: 100%;
-    max-height: 100%;
-    background: url('assets/background-index.gif') no-repeat center;
-    background-size: contain;
+.centered-image {
+    max-width: 100%; /* Garante que a imagem não exceda a largura do container */
+    height: auto; /* Mantém a proporção da imagem */
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .girlanda-container {
-        max-width: 90%; /* Use porcentagem para manter a responsividade */
-        max-height: 90%;
-    }
-    
-    .modal {
-        width: auto; /* Isso permite que o modal se ajuste ao conteúdo */
-        max-width: 90%; /* Evita que o modal seja muito largo */
-    }
-}
 
-@media (min-width: 768px) and (max-width: 1024px) {
-    .girlanda-container {
-        width: 400px;
-        height: 400px;
-    }
+/* Remova o fundo verde */
 
-    /* Ajustes para tablets */
-    .modal {
-        width: 80%;
-    }
-}
 
-/* Se for necessário um ponto de interrupção para telas maiores, você pode adicioná-lo */
-@media (min-width: 1025px) {
-    .girlanda-container {
-        width: 500px;
-        height: 500px;
-    }
-
-    /* Ajustes para desktops */
-    .modal {
-        width: 60%;
-    }
-}
